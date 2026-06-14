@@ -29,7 +29,8 @@ a {
 
 button,
 input,
-select {
+select,
+textarea {
   font: inherit;
 }
 
@@ -252,13 +253,18 @@ h2 {
 }
 
 input,
-select {
+select,
+textarea {
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: 6px;
   min-height: 42px;
   padding: 9px 12px;
   width: 100%;
+}
+
+textarea {
+  resize: vertical;
 }
 
 .game-card {
@@ -371,6 +377,74 @@ select {
   border-bottom: 0;
 }
 
+.order-item-row {
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr 120px 90px 120px;
+  padding: 12px 0;
+}
+
+.order-item-row:last-child {
+  border-bottom: 0;
+}
+
+.log-row {
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr auto;
+  padding: 14px 0;
+}
+
+.log-row:last-child {
+  border-bottom: 0;
+}
+
+.log-row strong {
+  display: block;
+  margin-top: 8px;
+}
+
+.log-row pre {
+  background: #111827;
+  border-radius: 6px;
+  color: #f9fafb;
+  margin: 10px 0 0;
+  overflow-x: auto;
+  padding: 12px;
+  white-space: pre-wrap;
+}
+
+.log-level {
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 4px 8px;
+}
+
+.log-level-information {
+  background: #eef4ff;
+  color: #1849a9;
+}
+
+.log-level-warning {
+  background: #fffaeb;
+  color: #b54708;
+}
+
+.log-level-error {
+  background: #fef3f2;
+  color: var(--danger);
+}
+
+.log-level-debug {
+  background: #f4f3ff;
+  color: #5925dc;
+}
+
 .summary-bar,
 .order-card {
   padding: 18px;
@@ -426,6 +500,14 @@ select {
   }
 
   .cart-row {
+    grid-template-columns: 1fr;
+  }
+
+  .order-item-row {
+    grid-template-columns: 1fr;
+  }
+
+  .log-row {
     grid-template-columns: 1fr;
   }
 

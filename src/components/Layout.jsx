@@ -25,6 +25,7 @@ export default function Layout() {
           <NavLink to="/learn">Learn</NavLink>
           {isAuthenticated && <NavLink to="/cart">Cart ({itemCount})</NavLink>}
           {isAuthenticated && <NavLink to="/orders">Orders</NavLink>}
+          {isAuthenticated && <NavLink to="/logs">Logs</NavLink>}
           {isAuthenticated && <NavLink to="/admin/games">Admin</NavLink>}
         </nav>
 

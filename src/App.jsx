@@ -9,7 +9,9 @@ import Dashboard from './pages/Dashboard.jsx';
 import GameDetails from './pages/GameDetails.jsx';
 import Learning from './pages/Learning.jsx';
 import Login from './pages/Login.jsx';
+import LogFile from './pages/LogFile.jsx';
 import NotFound from './pages/NotFound.jsx';
+import OrderDetails from './pages/OrderDetails.jsx';
 import Orders from './pages/Orders.jsx';
 import Register from './pages/Register.jsx';
 
@@ -29,6 +31,8 @@ export default function App() {
           <Route path="cart" element={<Cart />} />
           <Route path="checkout" element={<Checkout />} />
           <Route path="orders" element={<Orders />} />
+          <Route path="orders/:id" element={<OrderDetails />} />
+          <Route path="logs" element={<LogFile />} />
           <Route path="admin/games" element={<AdminGames />} />
         </Route>
 

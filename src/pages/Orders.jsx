@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import StatusMessage from '../components/StatusMessage.jsx';
 import { useAsync } from '../hooks/useAsync.js';
 import { useDocumentTitle } from '../hooks/useDocumentTitle.js';
@@ -27,9 +28,10 @@ export default function Orders() {
           <article className="order-card" key={order.id}>
             <div>
               <strong>Order #{order.id}</strong>
-              <p className="muted">{formatDate(order.createdAt ?? order.orderDate)}</p>
+              <p className="muted">{formatDate(order.orderedAt ?? order.createdAt ?? order.orderDate)}</p>
             </div>
             <strong>{formatCurrency(order.totalAmount ?? order.total ?? 0)}</strong>
+            <Link className="button ghost" to={`/orders/${order.id}`}>Details</Link>
           </article>
         ))}
         {!loading && orders.length === 0 && <StatusMessage>No orders yet.</StatusMessage>}

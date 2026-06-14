@@ -12,7 +12,7 @@ Minimal React frontend for the ASP.NET Core GameStore API. It is built as a prac
 - API integration with JWT bearer tokens
 - Derived data with `useMemo` and stable handlers with `useCallback`
 - Basic admin CRUD patterns for games
-- Real workflows: register/login, browse games, cart, checkout, my orders, logout
+- Real workflows: register/login, browse games, cart, checkout, my orders, order details, log file view, logout
 
 ## Prerequisites
 
@@ -40,6 +40,7 @@ The app expects these ASP.NET Core routes:
 - `GET /cart`, `POST /cart/items`, `PUT /cart/items/{gameId}`, `DELETE /cart/items/{gameId}`, `DELETE /cart`
 - `POST /checkout`
 - `GET /orders/my`, `GET /orders/my/{id}`
+- `GET /logs`
 
 If your backend DTO names differ slightly, update `src/services/gameStoreApi.js`.
 

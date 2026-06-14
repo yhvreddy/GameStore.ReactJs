@@ -32,3 +32,7 @@ export const orderApi = {
   getMyOrders: () => request('/orders/my'),
   getMyOrder: (id) => request(`/orders/my/${id}`),
 };
+
+export const logApi = {
+  getLogs: () => request('/logs'),
+};

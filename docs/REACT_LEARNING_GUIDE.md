@@ -32,6 +32,7 @@ Open `src/pages/Login.jsx`, `src/pages/Register.jsx`, and `src/pages/AdminGames.
 - Inputs are controlled by React state.
 - Submit handlers validate data before calling the API.
 - Loading and error states make forms easier to use.
+- `src/pages/LogFile.jsx` shows a read-only diagnostic list loaded from the API.
 
 ## 5. Routing
 
@@ -39,7 +40,7 @@ Open `src/App.jsx`.
 
 - `BrowserRouter` enables client-side navigation.
 - `Routes` and `Route` decide which page component renders.
-- `useParams` reads URL values like `/games/:id`.
+- `useParams` reads URL values like `/games/:id` and `/orders/:id`.
 - `ProtectedRoute` blocks private pages when the user is not logged in.
 
 ## 6. Context
@@ -55,6 +56,7 @@ Open `src/context/AuthContext.jsx` and `src/context/CartContext.jsx`.
 Open `src/hooks`.
 
 - `useLocalStorage` persists state between refreshes.
+- The Log File page uses `useAsync` plus manual refresh to reload backend data.
 - `useDebounce` waits before applying fast-changing values.
 - `useDocumentTitle` updates the browser tab title.
 - `useAsync` centralizes loading/error/success behavior.
@@ -78,6 +80,6 @@ Open `src/services/httpClient.js`.
 
 1. Add a price range filter to the catalog.
 2. Add optimistic cart updates.
-3. Add an order details page using `GET /orders/my/{id}`.
+3. Add a printable order receipt view.
 4. Add admin genre management.
 5. Replace the simple CSS with a component library after you understand the basics.

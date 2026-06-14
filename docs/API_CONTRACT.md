@@ -81,3 +81,13 @@ Authenticated users can use:
 - `GET /orders/my/{id}`
 
 Checkout creates an order from the current cart.
+
+The order details page uses `GET /orders/my/{id}` and renders each returned item with `gameName`, `unitPrice`, `quantity`, and `lineTotal`.
+
+## Logs
+
+The Log File page expects:
+
+- `GET /logs`
+
+The response should be a list of `LogDto` rows with `id`, `level`, `message`, `source`, `userId`, `exception`, and `createdAt`.
