@@ -32,6 +32,9 @@ export default function App() {
           <Route path="checkout" element={<Checkout />} />
           <Route path="orders" element={<Orders />} />
           <Route path="orders/:id" element={<OrderDetails />} />
+        </Route>
+
+        <Route element={<ProtectedRoute adminOnly />}>
           <Route path="logs" element={<LogFile />} />
           <Route path="admin/games" element={<AdminGames />} />
         </Route>

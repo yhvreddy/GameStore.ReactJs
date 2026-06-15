@@ -47,6 +47,12 @@ export function AuthProvider({ children }) {
   const value = useMemo(() => ({
     auth,
     isAuthenticated: Boolean(auth?.token),
+    isAdmin: Boolean(
+      auth?.user?.roleName?.toLowerCase() === 'admin' ||
+      auth?.user?.role?.slug === 'admin' ||
+      auth?.user?.role === 'Admin' ||
+      auth?.user?.role === 'admin'
+    ),
     token: auth?.token ?? '',
     user: auth?.user ?? null,
     login,

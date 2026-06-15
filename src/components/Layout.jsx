@@ -4,7 +4,7 @@ import { useCart } from '../context/CartContext.jsx';
 
 export default function Layout() {
   const navigate = useNavigate();
-  const { isAuthenticated, user, logout } = useAuth();
+  const { isAuthenticated, isAdmin, user, logout } = useAuth();
   const { itemCount } = useCart();
 
   async function handleLogout() {
@@ -25,8 +25,8 @@ export default function Layout() {
           <NavLink to="/learn">Learn</NavLink>
           {isAuthenticated && <NavLink to="/cart">Cart ({itemCount})</NavLink>}
           {isAuthenticated && <NavLink to="/orders">Orders</NavLink>}
-          {isAuthenticated && <NavLink to="/logs">Logs</NavLink>}
-          {isAuthenticated && <NavLink to="/admin/games">Admin</NavLink>}
+          {isAuthenticated && isAdmin && <NavLink to="/logs">Logs</NavLink>}
+          {isAuthenticated && isAdmin && <NavLink to="/admin/games">Products</NavLink>}
         </nav>
 
         <div className="auth-actions">
