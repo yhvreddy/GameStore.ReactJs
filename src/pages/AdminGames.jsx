@@ -13,7 +13,7 @@ const emptyForm = {
 };
 
 export default function AdminGames() {
-  useDocumentTitle('Admin Games');
+  useDocumentTitle('Products');
 
   const gamesRequest = useAsync(catalogApi.getGames, []);
   const genresRequest = useAsync(catalogApi.getGenres, []);
@@ -90,8 +90,8 @@ export default function AdminGames() {
   return (
     <div className="admin-layout">
       <form className="form-panel" onSubmit={saveGame}>
-        <p className="eyebrow">Admin</p>
-        <h1>{editingId ? 'Edit Game' : 'Create Game'}</h1>
+        <p className="eyebrow">Products</p>
+        <h1>{editingId ? 'Edit Product' : 'Create Product'}</h1>
         <label>Name<input name="name" value={form.name} onChange={updateField} required /></label>
         <label>Genre
           <select name="genreId" value={form.genreId} onChange={updateField} required>
@@ -107,7 +107,7 @@ export default function AdminGames() {
       </form>
 
       <section className="table-panel">
-        <h2>Existing Games</h2>
+        <h2>Existing Products</h2>
         {games.map((game) => (
           <div className="cart-row" key={game.id}>
             <div><strong>{readGameName(game)}</strong><p className="muted">{formatCurrency(game.price)}</p></div>

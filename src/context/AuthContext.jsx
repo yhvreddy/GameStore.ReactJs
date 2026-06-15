@@ -48,6 +48,8 @@ export function AuthProvider({ children }) {
     auth,
     isAuthenticated: Boolean(auth?.token),
     isAdmin: Boolean(
+      auth?.user?.roleId === 1 ||
+      auth?.user?.roleId === '1' ||
       auth?.user?.roleName?.toLowerCase() === 'admin' ||
       auth?.user?.role?.slug === 'admin' ||
       auth?.user?.role === 'Admin' ||
